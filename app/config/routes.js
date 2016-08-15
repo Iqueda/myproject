@@ -1,26 +1,22 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var hashHistory = ReactRouter.hashHistory;
-var IndexRoute = ReactRouter.IndexRoute;
-var Main = require('../components/Main');
-var Home = require("../components/Home");
-var Produto = require("../components/Produto");
-var Cfisico = require("../components/Cfisico");
-var Cjuridico = require("../components/Cjuridico");
-var Pedido = require("../components/Pedido");
+import React from 'react'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import Main from '../components/Main'
+import Home from "../components/Home"
+import Produto from "../components/Produto"
+import Cfisico from "../components/Cfisico"
+import Cjuridico from "../components/Cjuridico"
+import Pedido from "../components/Pedido"
 
-var routes = (
+const routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
     	<IndexRoute component={Home} />
     	<Route path='produto' component={Produto} />
     	<Route path='clienteFisico' component={Cfisico} />
-		<Route path='clienteJuridico' component={Cjuridico} />
-		<Route path='pedido' component={Pedido} />
+			<Route path='clienteJuridico' component={Cjuridico} />
+			<Route path='pedido' component={Pedido} />
     </Route>
   </Router>
-);
+)
 
-module.exports = routes;
+export default routes
